@@ -9,6 +9,7 @@ class Entity
 protected:
 	sf::Color mColor;
 	sf::Vector2f mPosition;
+	sf::Vector2f mVector;
 	Context::StateLabel mState;
 	Behaviour* mBehaviour;
 	int mRow;
