@@ -139,6 +139,7 @@
     <ClCompile Include="IdleAction.cpp" />
     <ClCompile Include="MovementAction.cpp" />
     <ClCompile Include="Plant.cpp" />
+    <ClCompile Include="ReloadingAction.cpp" />
     <ClCompile Include="ShootAction.cpp" />
     <ClCompile Include="Transition.cpp" />
     <ClCompile Include="Zombie.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="IdleAction.h" />
     <ClInclude Include="MovementAction.h" />
     <ClInclude Include="Plant.hpp" />
+    <ClInclude Include="ReloadingAction.h" />
     <ClInclude Include="ShootAction.h" />
     <ClInclude Include="Transition.hpp" />
     <ClInclude Include="Zombie.h" />

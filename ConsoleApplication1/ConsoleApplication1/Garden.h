@@ -1,6 +1,7 @@
 #pragma once
 #include "Plant.hpp"
 #include "Zombie.h"
+#include "Bullet.h"
 #include "SFML/Graphics.hpp"
 
 namespace {
