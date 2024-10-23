@@ -25,8 +25,19 @@ void Garden::checkCollision(std::vector<Bullet*>& mProjectiles, std::vector<Zomb
 		{
 			if (mProjectiles[I]->getRow() == mEnemies[II]->getRow() && mProjectiles[I]->getPosition().x + 10 >= mEnemies[II]->getPosition().x && mProjectiles[I]->getPosition().x + 10 <= mEnemies[II]->getPosition().x + 50) 
 			{
-				mProjectiles[I]->~Bullet();
-				mEnemies[II]->~Zombie();
+
+				auto it = std::find(mProjectiles.begin(), mProjectiles.end(), mProjectiles[I]);
+
+				if (it != mProjectiles.end()) {
+					delete* it;        // Delete the object pointed to by the iterator
+					mProjectiles.erase(it);    // Remove the pointer from the vector
+				}
+				auto it2 = std::find(mEnemies.begin(), mEnemies.end(), mEnemies[I]);
+
+				if (it2 != mEnemies.end()) {
+					delete* it2;        // Delete the object pointed to by the iterator
+					mEnemies.erase(it2);    // Remove the pointer from the vector
+				}
 			}
 		}
 	}
@@ -150,6 +161,7 @@ void Garden::update()
 {
 	for (int i = 0; i < mPlants.size(); i++) {
 		mPlants[i]->Update();
+		
 	}
 	for (int i = 0; i < mZombies.size(); i++) {
 		mZombies[i]->Update();
@@ -157,6 +169,8 @@ void Garden::update()
 	for (int i = 0; i < mBullets.size(); i++) {
 		mBullets[i]->Update();
 	}
+	checkCollision(mPlants, mZombies);
+	checkCollision(mBullets, mZombies);
 }
 
 void Garden::handleUserInput(sf::Event& event, sf::RenderWindow& window)
