@@ -127,7 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Behaviour.cpp" />
     <ClCompile Include="ConsoleApplication1.cpp" />
+    <ClCompile Include="Transition.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Action.hpp" />
+    <ClInclude Include="Behaviour.hpp" />
+    <ClInclude Include="Condition.hpp" />
+    <ClInclude Include="Context.hpp" />
+    <ClInclude Include="Plant.hpp" />
+    <ClInclude Include="Transition.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
