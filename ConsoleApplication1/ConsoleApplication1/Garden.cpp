@@ -9,6 +9,7 @@
 #include "IdleAction.h"
 #include "ReloadingAction.h"
 #include "EatCondition.h"
+#include "EatAction.h"
 #include "IdleCondition.h"
 #include "ShootCondition.h"
 #include "transition.hpp"
@@ -126,6 +127,15 @@ void Garden::draw(sf::RenderWindow& window)
 
 void Garden::update()
 {
+	for (int i = 0; i < mPlants.size(); i++) {
+		mPlants[i]->Update();
+	}
+	for (int i = 0; i < mZombies.size(); i++) {
+		mZombies[i]->Update();
+	}
+	for (int i = 0; i < mBullets.size(); i++) {
+		mBullets[i]->Update();
+	}
 }
 
 void Garden::handleUserInput(sf::Event& event, sf::RenderWindow& window)

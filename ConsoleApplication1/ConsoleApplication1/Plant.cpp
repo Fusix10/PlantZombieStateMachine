@@ -13,13 +13,10 @@ Plant::~Plant()
 
 void Plant::Init(sf::Vector2f position, Behaviour* plant_behaviour, int ammo_count,int row)
 {
+    Entity::Init(position, plant_behaviour, Context::StateLabel::Idle,sf::Vector2f(0.f,0.f),row);
     mHp = 5;
-    mPosition = position;
-    mBehaviour = plant_behaviour;
     mAmmoCount = ammo_count;
     mMaxAmmo = mAmmoCount;
-    mRow = row;
-    mState = Context::StateLabel::Idle;
     mSprite =new sf::Sprite();
     mSprite->setTexture(Garden::GetInstance()->mTexture);
     mSprite->setScale(sf::Vector2f(0.15f, 0.05f));
@@ -44,4 +41,5 @@ void Plant::shoot()
 
 void Plant::Update()
 {
+    mBehaviour->Update(this);
 }

@@ -9,8 +9,8 @@ void MovementAction::Start(Entity* Entity)
 void MovementAction::Update(Entity* Entity)
 {
 	sf::Vector2f Pos;
-	Pos.x = Entity->getVector().x * 10;
-	Pos.y = Entity->getVector().y * 10;
+	Pos.x = Entity->getVector().x * 0.005f;
+	Pos.y = Entity->getVector().y * 0.005f;
 	Entity->setPosition(Pos);
 }
 

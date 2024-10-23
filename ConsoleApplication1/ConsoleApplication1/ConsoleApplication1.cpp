@@ -22,6 +22,7 @@ int main()
     while (window.isOpen())
     {
         sf::Event event;
+        garden->update();
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
@@ -30,7 +31,7 @@ int main()
                 event.mouseButton.button == sf::Mouse::Left) {
                 float x = sf::Mouse::getPosition(window).x;
                 float y = sf::Mouse::getPosition(window).y / 100;
-                Zombie* zombie1 = garden->CreateZombie(sf::Vector2f(x, y*100 + 25), garden->GetZombieBehaviour(),sf::Vector2f(0.f,-1.f), y);
+                Zombie* zombie1 = garden->CreateZombie(sf::Vector2f(x, y*100 + 25), garden->GetZombieBehaviour(),sf::Vector2f(-1.f,0.f), y);
             }
         }
         window.clear(sf::Color::Black);
