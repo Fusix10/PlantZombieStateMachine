@@ -6,6 +6,8 @@
 
 Behaviour::Behaviour()
 {
+    //mActions = std::map<Context::StateLabel, std::vector<Action*>>();
+    //mTransitions = std::map<Context::StateLabel, std::vector<Transition*>>();
 }
 
 Behaviour::~Behaviour()

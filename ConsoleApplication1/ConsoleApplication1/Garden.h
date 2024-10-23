@@ -19,13 +19,16 @@ private:
 	Behaviour* mZombieBehaviour;
 	Behaviour* mBulletBehaviour;
 	Garden();
-	void Init();
 	void checkCollision(
 		std::vector<Bullet*>& mProjectiles,
 		std::vector<Zombie*>& mEnemies);
 public:
 	~Garden();
-
+	void Init();
+	sf::Texture mTexture;
+	Plant* CreatePlant();
+	Zombie* CreateZombie();
+	Bullet* CreateBullet();
 	static Garden* Instantiate();
 	static Garden* GetInstance();
 	void draw(sf::RenderWindow& window);

@@ -1,6 +1,5 @@
 #pragma once
-#include <SFML/System/Vector2.hpp>
-#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics.hpp>
 #include "Behaviour.hpp"
 #include <iostream>
 
@@ -13,6 +12,7 @@ protected:
 	Context::StateLabel mState;
 	Behaviour* mBehaviour;
 	int mRow;
+	sf::Sprite mSprite;
 public:
 	Entity();
 	virtual ~Entity();
