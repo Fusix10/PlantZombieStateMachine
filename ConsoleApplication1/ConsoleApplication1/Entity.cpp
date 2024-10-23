@@ -13,6 +13,7 @@ Entity::~Entity()
 void Entity::setState(Context::StateLabel State)
 {
 	mState = State;
+	mBehaviour->Start(this);
 }
 
 Context::StateLabel Entity::getState() const

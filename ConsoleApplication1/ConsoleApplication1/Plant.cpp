@@ -35,8 +35,7 @@ void Plant::refillMagazine()
 
 void Plant::shoot()
 {
-    Bullet* iBullet = new Bullet();
-    iBullet->init(mPosition, mRow);
+    Garden::GetInstance()->CreateBullet(mPosition, Garden::GetInstance()->GetBulletBehaviour(),sf::Vector2f(1.f,0.f),mRow);
 }
 
 void Plant::Update()

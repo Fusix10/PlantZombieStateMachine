@@ -108,20 +108,21 @@ Plant* Garden::CreatePlant(sf::Vector2f position, Behaviour* plant_behaviour, in
 	plant->Init(position, plant_behaviour, ammo_count, row);
 	mPlants.push_back(plant);
 
-	return new Plant();
+	return plant;
 }
 Zombie* Garden::CreateZombie(sf::Vector2f position, Behaviour* zombie_behaviour, sf::Vector2f mVector, int row)
 {
 	Zombie* zombie = new Zombie();
 	zombie->Init(position, zombie_behaviour, mVector, row);
 	mZombies.push_back(zombie);
-	return new Zombie();
+	return zombie;
 }
-Bullet* Garden::CreateBullet()
+Bullet* Garden::CreateBullet(sf::Vector2f position, Behaviour* zombie_behaviour, sf::Vector2f mVector, int row)
 {
 	Bullet* bullet = new Bullet();
+	bullet->Init(position, zombie_behaviour , mVector, row);
 	mBullets.push_back(bullet);
-	return new Bullet();
+	return bullet;
 }
 Garden::~Garden()
 {

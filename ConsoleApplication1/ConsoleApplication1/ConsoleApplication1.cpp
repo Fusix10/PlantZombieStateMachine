@@ -45,6 +45,11 @@ int main()
         {
             window.draw(*zombies[i]->GetSprite());
         }
+        std::vector<Bullet*> bullets = garden->GetBullets();
+        for (int i = 0; i < bullets.size(); i++)
+        {
+            window.draw(*bullets[i]->GetSprite());
+        }
 
         window.display();
     }

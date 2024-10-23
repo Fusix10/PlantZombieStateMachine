@@ -31,7 +31,7 @@ public:
 	sf::Texture mTexture1;
 	Plant* CreatePlant(sf::Vector2f position, Behaviour* plant_behaviour, int ammo_count, int row);
 	Zombie* CreateZombie(sf::Vector2f position, Behaviour* zombie_behaviour, sf::Vector2f mVector, int row);
-	Bullet* CreateBullet();
+	Bullet* CreateBullet(sf::Vector2f position, Behaviour* zombie_behaviour, sf::Vector2f mVector, int row);
 	static Garden* Instantiate();
 	static Garden* GetInstance();
 	void draw(sf::RenderWindow& window);
