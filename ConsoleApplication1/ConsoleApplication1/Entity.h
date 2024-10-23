@@ -23,5 +23,8 @@ public:
 
 	sf::Color getColor() const;
 	sf::Vector2f getPosition() const;
+	void setPosition(sf::Vector2f New_Pos);
+
+	sf::Vector2f getVector();
 };
 
