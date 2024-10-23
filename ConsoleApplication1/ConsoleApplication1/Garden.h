@@ -1,18 +1,18 @@
 #pragma once
-#include "Plant.hpp"
-#include "Zombie.h"
-#include "Bullet.h"
+
 #include "SFML/Graphics.hpp"
 
-namespace {
-	static Garden* mInstance = nullptr;
-}
+class Plant;
+class Zombie;
+class Bullet;
+class Entity;
+
 class Garden
 {
 private:
 	std::vector<Plant*> mPlants;
 	std::vector<Zombie*> mZombies;
-	std::vector<Bullet*> mZombies;
+	std::vector<Bullet*> mBullets;
 	std::vector<Entity*> mEntites;
 	Garden();
 	void checkCollision(
