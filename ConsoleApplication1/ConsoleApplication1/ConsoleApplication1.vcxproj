@@ -131,6 +131,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Behaviour.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="ConsoleApplication1.cpp" />
     <ClCompile Include="EatAction.cpp" />
     <ClCompile Include="EatCondition.cpp" />
@@ -147,6 +148,7 @@
   <ItemGroup>
     <ClInclude Include="Action.hpp" />
     <ClInclude Include="Behaviour.hpp" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Condition.hpp" />
     <ClInclude Include="Context.hpp" />
     <ClInclude Include="EatAction.h" />
