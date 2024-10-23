@@ -14,10 +14,14 @@ public:
         int ammo_count);
     ~Plant();
 
+
+    void Update() override;
+
+
     int getAmmoCount() const;
     void refillMagazine() ;
 
     bool shoot();
 
-    void Update();
+    
 };

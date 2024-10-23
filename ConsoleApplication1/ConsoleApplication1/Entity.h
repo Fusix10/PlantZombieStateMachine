@@ -17,6 +17,8 @@ public:
 	void setState(Context::StateLabel State);
 	Context::StateLabel getState() const;
 
+	virtual void Update() = 0;
+
 	sf::Color getColor() const;
 	sf::Vector2f getPosition() const;
 };
