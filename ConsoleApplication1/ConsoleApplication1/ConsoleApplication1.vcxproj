@@ -132,20 +132,32 @@
   <ItemGroup>
     <ClCompile Include="Behaviour.cpp" />
     <ClCompile Include="ConsoleApplication1.cpp" />
+    <ClCompile Include="EatAction.cpp" />
+    <ClCompile Include="EatCondition.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Garden.cpp" />
     <ClCompile Include="IdleAction.cpp" />
+    <ClCompile Include="MovementAction.cpp" />
     <ClCompile Include="Plant.cpp" />
+    <ClCompile Include="ShootAction.cpp" />
     <ClCompile Include="Transition.cpp" />
+    <ClCompile Include="Zombie.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.hpp" />
     <ClInclude Include="Behaviour.hpp" />
     <ClInclude Include="Condition.hpp" />
     <ClInclude Include="Context.hpp" />
+    <ClInclude Include="EatAction.h" />
+    <ClInclude Include="EatCondition.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Garden.h" />
     <ClInclude Include="IdleAction.h" />
+    <ClInclude Include="MovementAction.h" />
     <ClInclude Include="Plant.hpp" />
+    <ClInclude Include="ShootAction.h" />
     <ClInclude Include="Transition.hpp" />
+    <ClInclude Include="Zombie.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
