@@ -1,7 +1,7 @@
 #include "Behaviour.hpp"
-#include "IdleAction.hpp"
+#include "IdleAction.h"
 
-#include "Player.hpp"
+#include "Plant.hpp"
 #include "Transition.hpp"
 
 Behaviour::Behaviour()
@@ -27,43 +27,43 @@ Behaviour::~Behaviour()
     }
 }
 
-void Behaviour::AddTransition(Context::State key, Transition* value)
+void Behaviour::AddTransition(Context::StateLabel key, Transition* value)
 {
     mTransitions[key].push_back(value);
 }
 
-void Behaviour::AddAction(Context::State key, Action* value)
+void Behaviour::AddAction(Context::StateLabel key, Action* value)
 {
     mActions[key].push_back(value);
 }
 
-void Behaviour::Start(Player * player)
+void Behaviour::Start(Entity * Entity)
 {
-    for (const auto & a : mActions[player->getState()])
+    for (const auto & a : mActions[Entity->getState()])
     {
-        a->Start(player);
+        a->Start(Entity);
     }
 }
 
-void Behaviour::Update(Player * player)
+void Behaviour::Update(Entity * Entity)
 {
-    for (const auto & a : mActions[player->getState()])
+    for (const auto & a : mActions[Entity->getState()])
     {
-        a->Update(player);
+        a->Update(Entity);
     }
 
-    for (const auto & a : mTransitions[player->getState()])
+    for (const auto & a : mTransitions[Entity->getState()])
     {
-        a->Try(player);
+        a->Try(Entity);
     }
 }
 
 
-void Behaviour::End(Player * player)
+void Behaviour::End(Entity * Entity)
 {
-    for (const auto & a : mActions[player->getState()])
+    for (const auto & a : mActions[Entity->getState()])
     {
-        a->End(player);
+        a->End(Entity);
     }
 }
 

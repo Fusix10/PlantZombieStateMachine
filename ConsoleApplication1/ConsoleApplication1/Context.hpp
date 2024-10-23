@@ -1,7 +1,8 @@
+#pragma once
 namespace Context
 {
-enum class State 
+enum class StateLabel
 {
-    // ajoutez vos états ici
+
 };
 };

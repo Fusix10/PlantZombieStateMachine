@@ -5,16 +5,16 @@
 
 #include <vector>
 
-class Player;
+class Entity;
 
 class Transition
 {
 protected:
-    Context::State mTargetState;
+    Context::StateLabel mTargetState;
     std::vector<Condition*> mConditions;
 
 public:
-    void Try(Player * player);
-    void setTargetState(Context::State target_state);
+    void Try(Entity* Entity);
+    void setTargetState(Context::StateLabel target_state);
     void addCondition(Condition* condition);
 };

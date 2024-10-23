@@ -1,11 +1,11 @@
 #pragma once
 
-class Player;
+class Entity;
 
 class Action
 {
 public:
-    virtual void Start(Player * player) = 0;
-    virtual void Update(Player * player) = 0;
-    virtual void End(Player * player) = 0;
+    virtual void Start(Entity * Entity) = 0;
+    virtual void Update(Entity * Entity) = 0;
+    virtual void End(Entity * Entity) = 0;
 };

@@ -1,18 +1,11 @@
 #pragma once
+#include "Entity.h"
 
-#include <SFML/System/Vector2.hpp>
-#include <SFML/Graphics/Color.hpp>
-#include "Context.hpp"
-#include "Behaviour.hpp"
-#include <iostream>
 
-class Plant
+class Plant : public Entity
 {
-    sf::Vector2f mPosition;
     std::string mName;
     int mAmmoCount, mMaxAmmo;
-    Context::State mState;
-    Behaviour * mBehaviour;
 public:
     Plant();
     Plant(
@@ -21,11 +14,6 @@ public:
         int ammo_count);
     ~Plant();
 
-    void setState(Context::State);
-    Context::State getState() const;
-
-    sf::Color getColor() const;
-    sf::Vector2f getPosition() const;
     int getAmmoCount() const;
     void refillMagazine() ;
 
