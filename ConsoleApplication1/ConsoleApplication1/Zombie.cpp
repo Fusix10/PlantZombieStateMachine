@@ -15,6 +15,7 @@ void Zombie::Init(sf::Vector2f position, Behaviour* zombie_behaviour, sf::Vector
     mPosition = position;
     mBehaviour = zombie_behaviour;
     mRow = row;
+    mVector = vector;
     mState = Context::StateLabel::Idle;
     mSprite = new sf::Sprite();
     mSprite->setTexture(Garden::GetInstance()->mTexture1);
