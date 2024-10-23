@@ -1,4 +1,5 @@
 #include "EatAction.h"
+#include "Entity.h"
 
 void EatAction::Start(Entity* Entity)
 {
