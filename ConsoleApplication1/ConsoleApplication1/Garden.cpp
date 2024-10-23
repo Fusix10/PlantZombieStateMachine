@@ -18,12 +18,32 @@ namespace {
 
 void Garden::checkCollision(std::vector<Bullet*>& mProjectiles, std::vector<Zombie*>& mEnemies)
 {
-
+	for (int I = 0; I < mProjectiles.size(); I++) 
+	{
+		for (int II = 0; II < mEnemies.size(); II++)
+		{
+			if (mProjectiles[I]->getRow() == mEnemies[II]->getRow() && mProjectiles[I]->getPosition().x + 10 >= mEnemies[II]->getPosition().x && mProjectiles[I]->getPosition().x + 10 <= mEnemies[II]->getPosition().x + 50) 
+			{
+				mProjectiles[I]->~Bullet();
+				mEnemies[II]->~Zombie();
+			}
+		}
+	}
 }
 
 void Garden::checkCollision(std::vector<Plant*>& mPlants, std::vector<Zombie*>& mEnemies)
 {
-
+	//state zombie 
+	for (int I = 0; I < mPlants.size(); I++)
+	{
+		for (int II = 0; II < mEnemies.size(); II++)
+		{
+			if (mPlants[I]->getRow() == mEnemies[II]->getRow() && mPlants[I]->getPosition().x + 10 >= mEnemies[II]->getPosition().x && mPlants[I]->getPosition().x + 10 <= mEnemies[II]->getPosition().x + 50)
+			{
+				mEnemies[II]->setState(Context::StateLabel::Eating);
+			}
+		}
+	}
 }
 
 Garden::Garden()

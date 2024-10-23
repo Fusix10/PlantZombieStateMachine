@@ -39,6 +39,11 @@ void Entity::setPosition(sf::Vector2f New_Pos)
 	mPosition = mPosition + New_Pos;
 }
 
+int Entity::getRow()
+{
+	return mRow;
+}
+
 sf::Vector2f Entity::getVector()
 {
 	return mVector;
