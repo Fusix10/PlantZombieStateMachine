@@ -2,6 +2,8 @@
 #include "Entity.h"
 class Bullet : public Entity
 {
+private:
+    int mSpeed;
 public:
     Bullet();
     ~Bullet();

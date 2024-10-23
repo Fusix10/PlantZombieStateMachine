@@ -10,7 +10,7 @@ public:
     Plant();
     ~Plant();
 
-    void Init(sf::Vector2f position, Behaviour* plant_behaviour, int ammo_count);
+    void Init(sf::Vector2f position, Behaviour* plant_behaviour, int ammo_count, int row);
 
     void Update() override;
 

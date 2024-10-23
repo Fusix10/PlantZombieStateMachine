@@ -33,8 +33,9 @@ public:
 	static Garden* GetInstance();
 	void draw(sf::RenderWindow& window);
 	void update();
-	void handleUserInput(sf::Event& event, sf::RenderWindow&
-		window);
-
+	void handleUserInput(sf::Event& event, sf::RenderWindow&window);
+	Behaviour* GetPlantBehaviour();
+	Behaviour* GetZombieBehaviour();
+	Behaviour* GetBulletBehaviour();
 };
 
