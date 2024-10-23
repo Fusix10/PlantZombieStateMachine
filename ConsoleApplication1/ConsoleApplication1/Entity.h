@@ -12,7 +12,7 @@ protected:
 	Context::StateLabel mState;
 	Behaviour* mBehaviour;
 	int mRow;
-	sf::Sprite mSprite;
+	sf::Sprite* mSprite;
 public:
 	Entity();
 	virtual ~Entity();
@@ -23,5 +23,7 @@ public:
 
 	sf::Color getColor() const;
 	sf::Vector2f getPosition() const;
+	sf::Sprite* GetSprite();
+
 };
 

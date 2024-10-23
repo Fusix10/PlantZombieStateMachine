@@ -29,3 +29,8 @@ sf::Vector2f Entity::getPosition() const
 {
 	return mPosition;
 }
+
+sf::Sprite* Entity::GetSprite()
+{
+	return mSprite;
+}

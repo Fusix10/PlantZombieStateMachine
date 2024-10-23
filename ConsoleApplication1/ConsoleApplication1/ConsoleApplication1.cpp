@@ -4,15 +4,21 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "Garden.h"
+#include "Zombie.h"
+#include "Bullet.h"
+#include "Plant.hpp"
 int main()
 {
 
     sf::RenderWindow window(sf::VideoMode(650, 400), "Pvz");
    Garden* garden = Garden::Instantiate();
    garden->Init();
-   sf::Sprite sprite;
-   sprite.setTexture(garden->mTexture);
-   sprite.setScale(sf::Vector2f(0.15f, 0.10f));
+   Plant* plant1 = garden->CreatePlant(sf::Vector2f(10.f, 25.f), garden->GetPlantBehaviour(), 5, 0);
+   Plant* plant2 = garden->CreatePlant(sf::Vector2f(10.f, 125.f), garden->GetPlantBehaviour(), 5, 0);
+   Plant* plant3 = garden->CreatePlant(sf::Vector2f(10.f, 225.f), garden->GetPlantBehaviour(), 5, 0);
+   Plant* plant4 = garden->CreatePlant(sf::Vector2f(10.f, 325.f), garden->GetPlantBehaviour(), 5, 0);
+
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -20,10 +26,24 @@ int main()
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+            if (event.type == sf::Event::MouseButtonPressed &&
+                event.mouseButton.button == sf::Mouse::Left) {
+                float x = sf::Mouse::getPosition(window).x;
+                float y = sf::Mouse::getPosition(window).y / 100;
+                Zombie* zombie1 = garden->CreateZombie(sf::Vector2f(x, y*100 + 25), garden->GetZombieBehaviour(),sf::Vector2f(0.f,-1.f), y);
+            }
         }
         window.clear(sf::Color::Black);
-
-        window.draw(sprite);
+        std::vector<Plant*> plants = garden->GetPlants();
+        for(int i = 0;i< plants.size();i++)
+        {
+            window.draw(*plants[i]->GetSprite());
+        }
+        std::vector<Zombie*> zombies = garden->GetZombies();
+        for (int i = 0; i < zombies.size(); i++)
+        {
+            window.draw(*zombies[i]->GetSprite());
+        }
 
         window.display();
     }

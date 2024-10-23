@@ -1,10 +1,10 @@
 #pragma once
 #include "Condition.hpp"
-class EatCondition : public Condition
+class IdleCondition : public Condition
 {
 public:
-	EatCondition();
-	~EatCondition();
+	IdleCondition();
+	~IdleCondition();
 	bool Test(Entity* Entity)override;
 };
 

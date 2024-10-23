@@ -7,6 +7,7 @@ class Plant : public Entity
     std::string mName;
     int mAmmoCount, mMaxAmmo;
 public:
+    int mHp;
     Plant();
     ~Plant();
 

@@ -1,10 +1,10 @@
 #pragma once
 #include "Condition.hpp"
-class EatCondition : public Condition
+class ShootCondition : public Condition
 {
 public:
-	EatCondition();
-	~EatCondition();
+	ShootCondition();
+	~ShootCondition();
 	bool Test(Entity* Entity)override;
 };
 
