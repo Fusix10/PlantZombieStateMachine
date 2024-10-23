@@ -65,3 +65,18 @@ void Garden::update()
 void Garden::handleUserInput(sf::Event& event, sf::RenderWindow& window)
 {
 }
+
+Behaviour* Garden::GetPlantBehaviour()
+{
+	return mPlantBehaviour;
+}
+
+Behaviour* Garden::GetZombieBehaviour()
+{
+	return mZombieBehaviour;
+}
+
+Behaviour* Garden::GetBulletBehaviour()
+{
+	return mBulletBehaviour;
+}
