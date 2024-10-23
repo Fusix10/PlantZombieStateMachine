@@ -2,27 +2,30 @@
 
 Entity::Entity()
 {
+	mPosition = sf::Vector2f();
+	mBehaviour = nullptr;
 }
 
 Entity::~Entity()
 {
 }
 
-void Entity::setState(Context::StateLabel)
+void Entity::setState(Context::StateLabel State)
 {
+	mState = State;
 }
 
 Context::StateLabel Entity::getState() const
 {
-	return Context::StateLabel();
+	return mState;
 }
 
 sf::Color Entity::getColor() const
 {
-	return sf::Color();
+	return mColor;
 }
 
 sf::Vector2f Entity::getPosition() const
 {
-	return sf::Vector2f();
+	return mPosition;
 }

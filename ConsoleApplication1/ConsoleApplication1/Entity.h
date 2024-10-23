@@ -6,14 +6,15 @@
 
 class Entity
 {
-public:
+protected:
+	sf::Color mColor;
 	sf::Vector2f mPosition;
 	Context::StateLabel mState;
 	Behaviour* mBehaviour;
 public:
 	Entity();
 	virtual ~Entity();
-	void setState(Context::StateLabel);
+	void setState(Context::StateLabel State);
 	Context::StateLabel getState() const;
 
 	sf::Color getColor() const;
