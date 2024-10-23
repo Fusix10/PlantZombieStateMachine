@@ -11,6 +11,7 @@ protected:
 	sf::Vector2f mPosition;
 	Context::StateLabel mState;
 	Behaviour* mBehaviour;
+	int mRow;
 public:
 	Entity();
 	virtual ~Entity();
