@@ -1,6 +1,16 @@
 #include "Garden.h"
+#include "Plant.hpp"
+#include "Zombie.h"
+#include "Zombie.h"
+namespace {
+	static Garden* mInstance = nullptr;
+}
 
 void Garden::checkCollision(std::vector<Bullet*>& mProjectiles, std::vector<Zombie*>& mEnemies)
+{
+}
+
+Garden::Garden()
 {
 }
 
