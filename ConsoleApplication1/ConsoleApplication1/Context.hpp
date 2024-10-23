@@ -7,6 +7,7 @@ enum class StateLabel
 	Eating,
 	Moving,
 	Shooting,
+	Reloading,
 	Total,
 };
 };

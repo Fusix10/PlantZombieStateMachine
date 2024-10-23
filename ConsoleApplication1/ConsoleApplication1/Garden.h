@@ -6,15 +6,20 @@ class Plant;
 class Zombie;
 class Bullet;
 class Entity;
+class Behaviour;
 
 class Garden
 {
 private:
-	std::vector<Plant*> mPlants;
-	std::vector<Zombie*> mZombies;
-	std::vector<Bullet*> mBullets;
+	//std::vector<Plant*> mPlants;
+	//std::vector<Zombie*> mZombies;
+	//std::vector<Bullet*> mBullets;
 	std::vector<Entity*> mEntites;
+	Behaviour* mPlantBehaviour;
+	Behaviour* mZombieBehaviour;
+	Behaviour* mBulletBehaviour;
 	Garden();
+	void Init();
 	void checkCollision(
 		std::vector<Bullet*>& mProjectiles,
 		std::vector<Zombie*>& mEnemies);
