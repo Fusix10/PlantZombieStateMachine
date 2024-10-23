@@ -51,6 +51,11 @@ void Entity::setPosition(sf::Vector2f New_Pos)
 	mSprite->setPosition(mPosition);
 }
 
+int Entity::getRow()
+{
+	return mRow;
+}
+
 sf::Vector2f Entity::getVector()
 {
 	return mVector;

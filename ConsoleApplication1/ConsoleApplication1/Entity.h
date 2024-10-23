@@ -27,6 +27,7 @@ public:
 
 	void setPosition(sf::Vector2f New_Pos);
 
+	int getRow();
 	sf::Vector2f getVector();
 };
 
