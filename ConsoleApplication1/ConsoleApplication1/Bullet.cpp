@@ -21,8 +21,3 @@ void Bullet::init(sf::Vector2f position, int row)
 void Bullet::Update()
 {
 }
-
-int Bullet::GetSpeed()
-{
-	return mSpeed;
-}
