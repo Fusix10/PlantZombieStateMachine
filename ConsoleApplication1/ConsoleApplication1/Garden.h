@@ -25,6 +25,8 @@ private:
 	void checkCollision(
 		std::vector<Plant*>& mPlants, std::vector<Zombie*>& mEnemies);
 public:
+	bool checkCollisionEat(
+		std::vector<Plant*>& mPlants, Zombie* mEnemy);
 	~Garden();
 	void Init();
 	sf::Texture mTexture;
@@ -40,7 +42,7 @@ public:
 	Behaviour* GetPlantBehaviour();
 	Behaviour* GetZombieBehaviour();
 	Behaviour* GetBulletBehaviour();
-	std::vector<Plant*> GetPlants();
+	std::vector<Plant*>& GetPlants();
 	std::vector<Zombie*> GetZombies();
 	std::vector<Bullet*> GetBullets();
 };

@@ -25,10 +25,16 @@ void Zombie::Update()
     mBehaviour->Update(this);
 }
 
-void Zombie::Eat(Plant* plant)
+void Zombie::Eat()
 {
-    plant->mHp--;
-    if (plant->mHp <= 0) {
-        delete plant;
+    mTarget->mHp--;
+    if (mTarget->mHp <= 0) {
+        std::vector<Plant*>& test = Garden::GetInstance()->GetPlants();
+        auto it = std::find(test.begin(), test.end(), mTarget);
+
+        if (it != test.end()) {
+            delete* it;        // Delete the object pointed to by the iterator
+            test.erase(it);    // Remove the pointer from the vector
+        }
     }
 }

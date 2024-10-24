@@ -14,9 +14,9 @@ int main()
    Garden* garden = Garden::Instantiate();
    garden->Init();
    Plant* plant1 = garden->CreatePlant(sf::Vector2f(10.f, 25.f), garden->GetPlantBehaviour(), 5, 0);
-   Plant* plant2 = garden->CreatePlant(sf::Vector2f(10.f, 125.f), garden->GetPlantBehaviour(), 5, 0);
-   Plant* plant3 = garden->CreatePlant(sf::Vector2f(10.f, 225.f), garden->GetPlantBehaviour(), 5, 0);
-   Plant* plant4 = garden->CreatePlant(sf::Vector2f(10.f, 325.f), garden->GetPlantBehaviour(), 5, 0);
+   Plant* plant2 = garden->CreatePlant(sf::Vector2f(10.f, 125.f), garden->GetPlantBehaviour(), 5, 1);
+   Plant* plant3 = garden->CreatePlant(sf::Vector2f(10.f, 225.f), garden->GetPlantBehaviour(), 5, 2);
+   Plant* plant4 = garden->CreatePlant(sf::Vector2f(10.f, 325.f), garden->GetPlantBehaviour(), 5, 3);
 
 
     while (window.isOpen())

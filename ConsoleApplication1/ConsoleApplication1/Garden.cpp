@@ -19,9 +19,9 @@ namespace {
 
 void Garden::checkCollision(std::vector<Bullet*>& mProjectiles, std::vector<Zombie*>& mEnemies)
 {
-	for (int I = 0; I < mProjectiles.size(); I++) 
+	for (int I = mProjectiles.size()-1; I >= 0; I--)
 	{
-		for (int II = 0; II < mEnemies.size(); II++)
+		for (int II = mEnemies.size()-1; II >= 0; II--)
 		{
 			if (mProjectiles[I]->getRow() == mEnemies[II]->getRow() && mProjectiles[I]->getPosition().x + 10 >= mEnemies[II]->getPosition().x && mProjectiles[I]->getPosition().x + 10 <= mEnemies[II]->getPosition().x + 50) 
 			{
@@ -32,12 +32,13 @@ void Garden::checkCollision(std::vector<Bullet*>& mProjectiles, std::vector<Zomb
 					delete* it;        // Delete the object pointed to by the iterator
 					mProjectiles.erase(it);    // Remove the pointer from the vector
 				}
-				auto it2 = std::find(mEnemies.begin(), mEnemies.end(), mEnemies[I]);
+				auto it2 = std::find(mEnemies.begin(), mEnemies.end(), mEnemies[II]);
 
 				if (it2 != mEnemies.end()) {
 					delete* it2;        // Delete the object pointed to by the iterator
 					mEnemies.erase(it2);    // Remove the pointer from the vector
 				}
+				break;
 			}
 		}
 	}
@@ -53,9 +54,25 @@ void Garden::checkCollision(std::vector<Plant*>& mPlants, std::vector<Zombie*>& 
 			if (mPlants[I]->getRow() == mEnemies[II]->getRow() && mPlants[I]->getPosition().x + 10 >= mEnemies[II]->getPosition().x && mPlants[I]->getPosition().x + 10 <= mEnemies[II]->getPosition().x + 50)
 			{
 				mEnemies[II]->setState(Context::StateLabel::Eating);
+				mEnemies[II]->mTarget = mPlants[I];
 			}
 		}
 	}
+}
+
+bool Garden::checkCollisionEat(std::vector<Plant*>& mPlants, Zombie* mEnemy)
+{
+	//state zombie 
+	for (int I = 0; I < mPlants.size(); I++)
+	{
+			if (mPlants[I]->getRow() == mEnemy->getRow() && mPlants[I]->getPosition().x + 10 >= mEnemy->getPosition().x && mPlants[I]->getPosition().x + 10 <= mEnemy->getPosition().x + 50)
+			{
+				//mEnemies[II]->setState(Context::StateLabel::Eating);
+				mEnemy->mTarget = mPlants[I];
+				return true;
+			}
+	}
+	return false;
 }
 
 Garden::Garden()
@@ -169,7 +186,7 @@ void Garden::update()
 	for (int i = 0; i < mBullets.size(); i++) {
 		mBullets[i]->Update();
 	}
-	checkCollision(mPlants, mZombies);
+	//checkCollision(mPlants, mZombies);
 	checkCollision(mBullets, mZombies);
 }
 
@@ -192,7 +209,7 @@ Behaviour* Garden::GetBulletBehaviour()
 	return mBulletBehaviour;
 }
 
-std::vector<Plant*> Garden::GetPlants()
+std::vector<Plant*>& Garden::GetPlants()
 {
 	return mPlants;
 }

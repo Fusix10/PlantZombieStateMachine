@@ -1,5 +1,7 @@
 #include "EatAction.h"
 #include "Entity.h"
+#include "Garden.h"
+#include "Zombie.h"
 
 void EatAction::Start(Entity* Entity)
 {
@@ -13,7 +15,8 @@ void EatAction::Update(Entity* Entity)
 	mTimeSpent = std::chrono::duration_cast<std::chrono::milliseconds>(currentTime - mStartEatingTimePoint).count();
 	if (mTimeSpent >= 3000) {
 		mTimeSpent = 0;
-		Entity->setState(Context::StateLabel::Idle);
+		Entity->setState(Context::StateLabel::Moving);
+		dynamic_cast<Zombie*>(Entity)->Eat();
 	}
 }
 
